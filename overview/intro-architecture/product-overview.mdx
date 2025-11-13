@@ -1,0 +1,45 @@
+---
+title: "What is This Product?"
+description: "Introduces the product with a clear value proposition: what problem it solves, who benefits from it, and how it fits into broader workflows. Explains the primary business value and scenarios where it's most effective. Also highlights typical user profiles and high-impact use cases."
+---
+
+## Discover What This Product Does for You
+
+In today’s fast-moving digital landscape, identifying file formats quickly and reliably is critical. This product empowers you to detect MIME types accurately, letting you adapt your workflows to handle files according to their true nature. Whether you're a developer ensuring your app processes diverse file inputs correctly or a system that orchestrates data flows across formats, this product helps you avoid errors, improve security, and streamline file management with confidence.
+
+## A Clear Definition for Everyday Use
+
+At its core, this product is a lightweight library dedicated to identifying the MIME type of any given file or binary data. Instead of relying solely on file extensions, it inspects the actual content to determine the correct media type. This ensures that your systems recognize files as they truly are, guarding against misinterpretation or malicious use.
+
+Its simplicity makes it well-suited for developers, system integrators, and IT professionals who need a dependable way to verify content type within diverse environments. It fits naturally into contexts where reliable MIME type detection forms the bedrock of accurate file handling, upload validation, or format-specific processing tasks.
+
+## How It Operates with Precision
+
+This product functions by examining the initial bytes of files or data streams—often referred to as "magic numbers" or signature patterns—to establish the MIME type. It employs a comprehensive set of predefined signatures mapped to well-known formats. When you provide a file or data sample, the detection engine matches these signatures against the data's leading bytes to return the correct MIME classification.
+
+This approach avoids pitfalls common to methods that depend on file naming conventions or extensions, which can be misleading or manipulated. Instead, it ensures a content-aware identification that aligns with actual file data.
+
+## Real-World Applications Illustrating Its Value
+
+Imagine an email service that needs to filter attachments to prevent malicious files. By detecting the true MIME type—even if a file extension claims otherwise—it can block dangerous payloads before they reach users. Similarly, a content management system can automatically route images, videos, and documents to their appropriate handlers, ensuring smooth ingestion and rendering.
+
+For developers integrating this product into their projects, the API is straightforward: you pass a buffer or file stream to the detection function and receive a MIME type string in return. This enables you to implement conditional logic based on file type easily. For example, rejecting unexpected or unsupported formats early, which saves processing time and enhances security.
+
+```javascript
+const mimetype = require('mimetype');
+
+const type = mimetype.detectFileSync('example.png');
+console.log(type); // Outputs: 'image/png'
+```
+
+This simple usage highlights how seamlessly MIME type detection fits into file-handling workflows.
+
+## Preparing to Use the Product & Next Steps
+
+Getting started demands nothing more than installing the package and calling its detection methods in your preferred environment. The product’s minimal dependencies mean it integrates quickly without bloating your project.
+
+To deepen your understanding, explore the [System Architecture](/overview/intro-architecture/system-architecture) page for insights into its internal design. For a broader perspective on terminology and key features, visit [Core Concepts & Terminology](/overview/concepts-features/core-concepts) and [Feature Overview](/overview/concepts-features/feature-overview).
+
+This foundational knowledge will help you leverage the product most effectively in your workflows.
+
+<Source url="https://github.com/gabriel-vasile/mimetype" paths={[{"path": "detect.go", "range": "10-75"}]} />

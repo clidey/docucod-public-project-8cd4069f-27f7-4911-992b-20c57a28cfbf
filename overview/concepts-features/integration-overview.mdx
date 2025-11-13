@@ -1,0 +1,51 @@
+---
+title: "Integration & Ecosystem"
+description: "Highlights how the product integrates with external systems, APIs, or platforms. Outlines supported integration scenarios and any requirements for connecting with existing workflows or technologies."
+---
+
+## Connecting Seamlessly with Your Existing Ecosystem
+
+In today’s interconnected technology landscape, being able to integrate effortlessly with external systems is essential for boosting productivity and maintaining smooth workflows. This page outlines how the product enables you to bridge data and functionality between diverse environments, allowing you to leverage its capabilities without disruption. Whether you are embedding it into your continuous integration pipelines, linking with other APIs, or incorporating it into complex platforms, these integration options empower you to enhance your existing toolset confidently and efficiently.
+
+## What Integration Means for You
+
+Integration here refers to the product’s ability to interact and function with external software, services, or automated workflows. It is designed to complement and extend your current infrastructure by supporting standardized interaction modes and compatibility with common platforms. The primary users benefitting from this are developers, DevOps engineers, and solution architects who want to embed the product’s core functionality deeply and reliably within their operational environments. These integrations ensure you spend less time managing incompatibilities and more time focusing on delivering value.
+
+## How Integration Works at a High Level
+
+The product offers integration opportunities primarily through well-defined interfaces that allow external systems to invoke its core functionality programmatically. This approach ensures that your workflows remain consistent and automated, minimizing manual intervention. Typically, integration involves your system sending requests to the product, which processes these inputs and responds with actionable results. This interaction can be orchestrated by a variety of external tools or platforms, making it adaptable to your unique setup.
+
+Through established protocols and formats, the product maintains interoperability and supports synchronous or asynchronous communication patterns depending on your requirements. This design enables you to connect lightweight scripts, enterprise-grade applications, or cloud-native services effectively, preserving your workflow integrity.
+
+## Integration in Action: Real-World Usage
+
+Consider a scenario where a development team integrates the product into their automated build pipeline. As code changes are committed, the pipeline triggers analysis through the product’s interface and receives immediate feedback regarding file types or metadata, enabling dynamic decision-making such as conditional deployment or quality gates. This reduces manual verification and speeds up releases.
+
+In another example, a cloud-based platform might consume the product’s service via API calls to enrich its dataset with reliable file type detection, improving user experience by streamlining uploads and validations. The integration ensures that the platform can offer better automation and fewer errors without the need to maintain complex logic internally.
+
+Here is a simple example of how an external system might invoke the product functionality programmatically:
+
+```python
+import requests
+
+response = requests.post('https://your-product-api.example.com/detect', json={'file_path': 'sample.pdf'})
+if response.status_code == 200:
+    file_type = response.json().get('mime_type')
+    print(f'Detected file type: {file_type}')
+else:
+    print('Failed to detect file type')
+```
+
+This snippet demonstrates straightforward integration that can be embedded into broader automation or user-triggered workflows.
+
+## Preparing for Integration and Next Steps
+
+Getting started with integration involves understanding your system’s capabilities and how they align with the product’s supported interaction methods. Familiarize yourself with the interface requirements and authentication mechanisms outlined in the Getting Started documentation to configure connections securely and efficiently. Once established, you can explore advanced integration scenarios, such as batch processing, event-driven triggers, or multi-platform orchestration.
+
+For detailed setup instructions and environment preparation, see the [Getting Started](/overview/concepts-features/getting-started) section.
+
+<Tip>
+Integration success relies on correctly matching your existing workflows with the product’s supported inputs and outputs. Testing incrementally helps identify potential issues early.
+</Tip>
+
+<Source url="https://github.com/gabriel-vasile/mimetype" branch="main" paths={[{"path": "README.md", "range": "1-50"}]} />

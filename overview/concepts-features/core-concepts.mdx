@@ -1,0 +1,41 @@
+---
+title: "Core Concepts & Terminology"
+description: "Explains the primary domain terms and concepts users will encounter throughout the system. Clarifies how these elements interrelate and form the cognitive backbone for using and integrating with the product."
+---
+
+## Understanding Core Concepts & Terminology
+
+When engaging with this system, a clear grasp of the foundational concepts and terminology is vital. These building blocks shape how you interact with the product and integrate it effectively into your workflows. By establishing a shared language, this page empowers you to navigate the system confidently and communicate precisely about its components and behaviors.
+
+## Defining the Primary Elements
+
+At its heart, the product revolves around a set of key concepts that consistently appear across its interface, documentation, and APIs. These include the notions of mimetypes (media types), detection processes, and identification rules. Mimetypes serve as standardized identifiers that describe the format and nature of files or data streams. The detection process is how the system determines these mimetypes based on file content or metadata. Identification rules guide this detection, encapsulating patterns and signatures used to match files to their corresponding mimetypes.
+
+This page targets users who need to understand these fundamental elements to make effective use of the product—whether you are integrating detection into your application, configuring custom identification rules, or simply interpreting detection results in your workflow.
+
+## How Core Concepts Fit Together at a High Level
+
+The product’s logic centers on mapping digital content to its correct mimetype through a structured detection workflow. Incoming data is analyzed against a layered hierarchy of identification rules. These rules employ a variety of methods, such as exact byte sequence matches, magic numbers, or pattern fingerprints, to classify files accurately.
+
+This process is not linear but involves prioritization and fallback mechanisms to ensure reliable detection even when metadata is absent or ambiguous. Through this approach, the system balances precision and robustness, enabling it to handle diverse file formats encountered in practical scenarios.
+
+## Seeing Core Concepts in Action
+
+Imagine you receive a file with an ambiguous extension or no extension at all. Instead of relying solely on filename heuristics, the system inspects the file's bytes through its detection rules. For example, the detection engine may recognize the characteristic signature of a PNG image or the header of a PDF. Each matched rule associates the file with its official mimetype, such as `image/png` or `application/pdf`, providing your application with actionable insight.
+
+This clarity allows you to automate handling files appropriately—rendering images, processing documents, or routing data along specialized pipelines. To illustrate, a simple code snippet for querying the mimetype might look like this:
+
+```javascript
+const mimetype = detectMimeType(fileBuffer);
+console.log(`Detected mimetype: ${mimetype}`);
+```
+
+This example underscores how the core terminology translates directly into practical use: detecting a file’s type to drive downstream decisions.
+
+## Preparing to Work with Core Concepts
+
+Before you begin harnessing these core concepts within your environment, it’s important to familiarize yourself with the system’s setup and usage guidelines provided in the Getting Started documentation. This foundational preparation helps ensure smooth integration and optimal detection performance.
+
+For an introduction to how these concepts relate to the broader product architecture and features, consider reviewing the [Product Overview](/overview/intro-architecture/product-overview) and [Feature Overview](/overview/concepts-features/feature-overview).
+
+<Source url="https://github.com/gabriel-vasile/mimetype" branch="main" paths={[{"path": "mimetype.go", "range": "1-150"}]} />
